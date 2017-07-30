@@ -8,6 +8,13 @@ output_directory = "/media/bigdisk/converted/"
 
 script_working_dir = "/media/bigdisk/movies/"
 
+output_script = open("Handbrake.sh", "w")
+
+already_converted_txt = open("handbrakelog.txt", "r+")
+already_converted_list = already_converted_txt.readlines()
+already_converted_txt.close()
+
+
 
 def mainfunction(current_working_dir):
     directory_contents = os.listdir(current_working_dir)
@@ -18,17 +25,24 @@ def mainfunction(current_working_dir):
     for content in directory_contents:
         inputfile = current_working_dir + content
         if os.path.isfile(inputfile):
-            outputfile = output_directory + inputfile.replace(script_working_dir, "")
-            print(outputfile)
-            output = subprocess.Popen(
-                ["HandBrakeCLI", "--preset-import-gui", "customOne", "-i", inputfile, "-o", outputfile,
-                 " --audio-lang-list deu,eng", "--all-audio"],
-                stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-            line = output.stdout.readline()
-            output.wait()
+            already_converted = None
+            for converted_file in already_converted_list:
+                if converted_file == inputfile + "\n":
+                    already_converted = True
+            if not already_converted:
+                outputfile = output_directory + inputfile.replace(script_working_dir, "")
+                output_script.write("HandBrakeCLI --preset-import-file /home/mtoepperwien/Documents/customOne.json --preset customOne -i \"" + inputfile + "\" -o \"" + outputfile + "\" --audio-lang-list deu,eng --all-audio\n")
+                output_script.write("echo \"" + inputfile + "\"" + " >> handbrakelog.txt\n")
+            #output = subprocess.Popen(
+            #    ["HandBrakeCLI", "--preset-import-gui", "customOne", "-i", inputfile, "-o", outputfile,
+            #     " --audio-lang-list deu,eng", " --all-audio"],
+            #    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            #output.wait()
         elif os.path.isdir(inputfile):
             mainfunction(inputfile + "/")
 
 
 mainfunction(script_working_dir)
+output_script.write("echo Finished!\n")
+output_script.close()
 print("finished")
