@@ -54,4 +54,4 @@ def renamer(current_working_directory):
             i += 1
 
 
-renamer(os.getcwd())
+renamer("/media/bigdisk/converted/")
