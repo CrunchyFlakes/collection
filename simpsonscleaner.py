@@ -35,7 +35,7 @@ def getLength(filename):
 
 for file in os.listdir(os.getcwd()):
     file_length = getLength(file)
-    if file_length < deletion_threshold_in_minutes or file_length > 100:
+    if file_length < deletion_threshold_in_minutes or file_length > 30:
         os.remove(file)
         print(file + "with length: " + str(file_length) + "m" + " was removed!")
     else:
