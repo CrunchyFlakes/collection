@@ -3,10 +3,10 @@
 
 import os
 
-simpsons_skip = None
+simpsons_skip = True
 clone_directory_mode = True
 working_directory = "/media/bigdisk/converted/"
-clone_directory = "/media/bigdisk/movies/"
+clone_directories = ["/media/mtoepperwien/oldie/movies/", "/media/bigdisk/movies/"]
 
 def renamer(current_working_directory):
         os.chdir(current_working_directory)
@@ -18,11 +18,19 @@ def renamer(current_working_directory):
                 print("rename " + object_path + " ? (enter for no change)")
                 new_objectname = input()
                 if not new_objectname == "":
-                    os.rename(object, new_objectname)
+                    if os.path.isfile(object):
+                        new_objectname = new_objectname + "." + object.split(".")[1]
+                    os.rename(current_working_directory + object, current_working_directory + new_objectname)
                     if clone_directory_mode:
-                        os.rename((current_working_directory + object).replace(working_directory, clone_directory))
-                if object == "testing":
-                    nothing = None
+                        for clone_directory in clone_directories:
+                            os.rename((current_working_directory + object).replace(working_directory, clone_directory), (current_working_directory + new_objectname).replace(working_directory, clone_directory))
+                    object = new_objectname
+                elif os.path.isdir(current_working_directory + object):
+                    os.rename(current_working_directory + object, current_working_directory + object.lower())
+                    if clone_directory_mode:
+                        for clone_directory in clone_directories:
+                            os.rename((current_working_directory + object).replace(working_directory, clone_directory), (current_working_directory + object.lower()).replace(working_directory, clone_directory))
+                    object = object.lower()
                 if os.path.isdir(current_working_directory + object):
                     renamer(current_working_directory + object + "/")
 

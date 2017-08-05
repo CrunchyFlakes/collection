@@ -45,6 +45,10 @@ def renamer(current_working_directory):
                 # get number
                 number = int(episode_split[0].replace("title", ""))
                 episode_rename_map[number] = episode
+            if "_e" in episode:
+                episode_split = episode.split(".")[0].split("_")
+                number = int(episode_split[-1].replace("e", ""))
+                episode_rename_map[number] = episode
         sorted_keys = sorted(episode_rename_map.items())
         i = 0
         while i < len(sorted_keys):
