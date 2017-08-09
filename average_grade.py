@@ -3,17 +3,20 @@
 
 print("Input grades (first three LK). Hit Enter to calculate and stop input")
 counter = 0
+dividend = 0
 sum = 0
 while True:
     counter += 1
     grade = input(str(counter) + ": ")
     if grade == "":
-        counter -= 1
         break
-    if counter < 7:
-        counter += 1
+    if counter <= 3:
+        dividend += 1
         sum += int(grade)
     sum += int(grade)
+    dividend += 1
 
-print("Average: " + str(sum / counter))
-print(str((17 - (sum / counter)) / 3))
+print("Average: " + str(sum / dividend))
+print("         ≙" + str((17 - (sum / dividend)) / 3))
+
+temp = 1.7857142857142858
