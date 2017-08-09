@@ -7,7 +7,7 @@ import sys
 # get list of input parameters
 target_directories = sys.argv
 del target_directories[0]
-target_directories = []
+target_directories = ["/media/bigdisk/new movies"]
 if len(target_directories) <= 0:
     sys.exit("Please input target directories as input parameters!")
 
@@ -26,7 +26,7 @@ def renamer(target_directory_path):
         for object in os.listdir(target_directory_path):
             if os.path.isfile(form_path(object)) and "simpsons" in object.lower():
                 present_simpsons_files.append(object)
-            return present_simpsons_files
+        return present_simpsons_files
 
     def rename_folder(folder, season, disk=None):
         new_directory_name = "simpsons_s" + str(season)

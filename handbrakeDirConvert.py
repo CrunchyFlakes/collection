@@ -32,7 +32,7 @@ def mainfunction(current_working_dir):
             if not already_converted:
                 outputfile = output_directory + inputfile.replace(script_working_dir, "")
                 if not os.path.exists(outputfile):
-                    output_script.write("HandBrakeCLI --preset-import-file /home/mtoepperwien/Documents/customOne.json --preset customOne -i \"" + inputfile + "\" -o \"" + outputfile + "\" --audio-lang-list deu,eng --all-audio\n")
+                    output_script.write("HandBrakeCLI --preset-import-file /home/mtoepperwien/Documents/customOne.json --preset customOne -i \"" + inputfile + "\" -o \"" + outputfile + "\" --audio-lang-list deu,eng --all-audio -f av_mkv\n")
                     output_script.write("echo \"" + inputfile + "\"" + " >> handbrakelog.txt\n")
         elif os.path.isdir(inputfile):
             mainfunction(inputfile + "/")

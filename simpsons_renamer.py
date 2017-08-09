@@ -3,7 +3,7 @@
 
 import os
 
-working_directory = None
+working_directory = "/media/bigdisk/new movies/"
 
 def renamer(current_working_directory):
     directory_listed = os.listdir(current_working_directory)
@@ -14,7 +14,7 @@ def renamer(current_working_directory):
         object = str(object)
         if os.path.isdir(current_working_directory + "/" + object) and "simpsons" in object.lower():
             no_directory_found = None
-            object_lower = object.lower().split("_")
+            object_lower = object.lower().split(".")
             index_counter = 0
             season = None
             disc = None
@@ -58,4 +58,4 @@ def renamer(current_working_directory):
             i += 1
 
 
-renamer("/media/bigdisk/converted/")
+renamer(working_directory)
