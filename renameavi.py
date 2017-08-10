@@ -1,9 +1,7 @@
-
-
-
 import os
 
-working_directory = "/media/bigdisk/converted"
+working_directory = "/media/mtoepperwien/oldie/movies"
+
 
 def renamer(target_directory):
     os.chdir(target_directory)

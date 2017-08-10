@@ -49,6 +49,14 @@ def renamer(target_directory_path):
                 # get number
                 number = int(episode_split[0].replace("title", ""))
                 episodes_numbered[number] = episode
+            elif "_e" in episode and "_d" in episode:
+                episode_split = episode.split(".")[0].split("_")
+                number = None
+                for substring in episode_split:
+                    if "e" in substring and len(substring) == 2:
+                        number = int(substring.replace("e", ""))
+                number += int(get_disk(form_path(episode)) + "0")
+                episodes_numbered[number] = episode
             elif "_e" in episode:
                 episode_split = episode.split(".")[0].split("_")
                 number = int(episode_split[-1].replace("e", ""))
@@ -64,7 +72,8 @@ def renamer(target_directory_path):
         return sorted(episodes_numbered.items())
 
     def get_season(folder_path):
-        folder_substrings = folder_path.lower().split("/")[-1].split("_")
+        folder_substrings = folder_path.lower().split("/")[-1]
+        folder_substrings = folder_substrings.split(string_divided_by(folder_substrings))
         index_counter = 0
         for substring in folder_substrings:
             if substring == "season":
@@ -73,8 +82,9 @@ def renamer(target_directory_path):
                 return substring.replace("s", "")
             index_counter += 1
 
-    def get_disk(folder_path):
-        folder_substrings = folder_path.lower().split("/")[-1].split("_")
+    def get_disk(path):
+        folder_substrings = path.lower().split("/")[-1]
+        folder_substrings = folder_substrings.split(string_divided_by(folder_substrings))
         index_counter = 0
         for substring in folder_substrings:
             if "d" in substring and len(substring) == 2:
@@ -83,12 +93,20 @@ def renamer(target_directory_path):
                 return folder_substrings[index_counter + 1]
             index_counter += 1
 
+    def string_divided_by(string):
+        count_underscore = str(string).count("_")
+        count_dot = str(string).count(".")
+        if count_dot > count_underscore:
+            return "."
+        elif count_underscore > count_dot:
+            return "_"
+
     def form_path(object):
         return target_directory_path + "/" + object
 
     episode_number = 1
     for present_pair in get_ordered_simpsons_files(get_present_simpsons_files()):
-        rename_file(present_pair[1], get_season(target_directory_path), episode_number)
+        rename_file(present_pair[1], get_season(target_directory_path), episode_number, get_disk(target_directory_path))
         episode_number += 1
 
     for present_directory in get_present_simpsons_directories():
