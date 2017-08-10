@@ -7,7 +7,7 @@ import sys
 # get list of input parameters
 target_directories = sys.argv
 del target_directories[0]
-target_directories = ["/media/bigdisk/new movies"]
+# target_directories = []
 if len(target_directories) <= 0:
     sys.exit("Please input target directories as input parameters!")
 
@@ -106,11 +106,11 @@ def renamer(target_directory_path):
 
     episode_number = 1
     for present_pair in get_ordered_simpsons_files(get_present_simpsons_files()):
-        rename_file(present_pair[1], get_season(target_directory_path), episode_number, get_disk(target_directory_path))
+        rename_file(present_pair[1], get_season(target_directory_path), episode_number)
         episode_number += 1
 
     for present_directory in get_present_simpsons_directories():
-        rename_folder(present_directory, get_season(form_path(present_directory)), get_disk(form_path(present_directory)))
+        rename_folder(present_directory, get_season(form_path(present_directory)))
 
     for present_directory in get_present_simpsons_directories():
         new_target_directory = form_path(present_directory)
