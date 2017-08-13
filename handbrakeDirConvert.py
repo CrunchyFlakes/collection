@@ -7,11 +7,20 @@ output_directory = "/media/bigdisk/converted/"
 
 script_working_dir = "/media/bigdisk/movies/"
 
-output_script = open("Handbrake.sh", "w")
 
+def get_output_file(inputfile):
+    return output_directory + inputfile.replace(script_working_dir, "")
+
+output_script = open("Handbrake.sh", "w")
 already_converted_txt = open("handbrakelog.txt", "r+")
 already_converted_list = already_converted_txt.readlines()
 already_converted_txt.close()
+print("deleting: " + already_converted_list[-1])
+already_converted_txt = open("handbrakelog.txt", "w")
+already_converted_txt.writelines(already_converted_list[:-1])
+already_converted_txt.close()
+
+os.remove(get_output_file(already_converted_list[-1][:-1]))
 
 
 def mainfunction(current_working_dir):
@@ -27,12 +36,11 @@ def mainfunction(current_working_dir):
             for converted_file in already_converted_list:
                 if converted_file == input_file + "\n":
                     already_converted = True
-            already_converted = None  # disable log checking!
             if not already_converted:
                 output_file = output_directory + input_file.replace(script_working_dir, "")
+                output_script.write("echo \"" + input_file + "\"" + " >> handbrakelog.txt\n")
                 if not os.path.exists(output_file):
                     output_script.write("HandBrakeCLI --preset-import-file /home/mtoepperwien/Documents/customOne.json --preset customOne -i \"" + input_file + "\" -o \"" + output_file + "\" --audio-lang-list deu,eng --all-audio -f av_mkv\n")
-                    output_script.write("echo \"" + input_file + "\"" + " >> handbrakelog.txt\n")
         elif os.path.isdir(input_file):
             mainfunction(input_file + "/")
 
