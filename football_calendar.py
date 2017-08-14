@@ -25,6 +25,6 @@ for row in table:
                     datetimes.append(datetime(int(date[2]) + 2000, int(date[1]), int(date[0]), int(time[0]), int(time[1])))
 
 
-
+print("{:0>2}.{:0>2}".format(datetime.now().day, datetime.now().month))
 for date in datetimes:
-    print("{:0>2}.{:0>2}.{:0>4} {:0>2}:{:0>2}".format(date.day, date.month, date.year, date.hour, date.minute))
+    print(date.strftime("%A")[:3] + " " + "{:0>2}.{:0>2}.{:0>4} {:0>2}:{:0>2}".format(date.day, date.month, date.year, date.hour, date.minute))

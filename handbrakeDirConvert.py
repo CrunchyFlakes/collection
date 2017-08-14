@@ -15,12 +15,12 @@ output_script = open("Handbrake.sh", "w")
 already_converted_txt = open("handbrakelog.txt", "r+")
 already_converted_list = already_converted_txt.readlines()
 already_converted_txt.close()
-print("deleting: " + already_converted_list[-1])
-already_converted_txt = open("handbrakelog.txt", "w")
-already_converted_txt.writelines(already_converted_list[:-1])
-already_converted_txt.close()
+print("deleting: " + get_output_file(already_converted_list[-1]))
+#already_converted_txt = open("handbrakelog.txt", "w")
+#already_converted_txt.writelines(already_converted_list[:-1])
+#already_converted_txt.close()
 
-os.remove(get_output_file(already_converted_list[-1][:-1]))
+#os.remove(get_output_file(already_converted_list[-1][:-1]))
 
 
 def mainfunction(current_working_dir):
@@ -36,7 +36,7 @@ def mainfunction(current_working_dir):
             for converted_file in already_converted_list:
                 if converted_file == input_file + "\n":
                     already_converted = True
-            if not already_converted:
+            if not already_converted and "supernatural" not in content:
                 output_file = output_directory + input_file.replace(script_working_dir, "")
                 output_script.write("echo \"" + input_file + "\"" + " >> handbrakelog.txt\n")
                 if not os.path.exists(output_file):
