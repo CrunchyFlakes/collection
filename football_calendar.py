@@ -51,6 +51,6 @@ enemies = get_enemies()
 
 i = 0
 while i < len(enemies):
-    print(dates[i] + "  " + enemies[i])
+    print(dates[i] + " " + enemies[i])
     i += 1
 
