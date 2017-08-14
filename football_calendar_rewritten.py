@@ -54,6 +54,3 @@ while i < len(enemies):
     print(dates[i] + "  " + enemies[i])
     i += 1
 
-print("\n\n")
-print("Website: " + page_link)
-
