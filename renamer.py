@@ -8,6 +8,7 @@ clone_directory_mode = True
 working_directory = "/media/bigdisk/converted/"
 clone_directories = ["/media/mtoepperwien/oldie/movies/", "/media/bigdisk/movies/"]
 
+
 def renamer(current_working_directory):
         os.chdir(current_working_directory)
         directory_listed = os.listdir(current_working_directory)

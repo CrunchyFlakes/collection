@@ -7,7 +7,9 @@ dividend = 0
 sum = 0
 while True:
     counter += 1
-    grade = input(str(counter) + ": ")
+    grade = 100
+    while int(grade) > 15 or int(grade) <= 0:
+        grade = input(str(counter) + ": ")
     if grade == "":
         break
     if counter <= 3:
