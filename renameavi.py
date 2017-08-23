@@ -1,6 +1,6 @@
 import os
 
-working_directory = "/media/mtoepperwien/oldie/movies"
+working_directory = "/media/bigdisk/converted"
 
 
 def renamer(target_directory):
@@ -31,6 +31,7 @@ def renamer(target_directory):
         file_ending = file.split(".")[-1]
         if file_ending == "avi":
             change_extension_to_mkv(file)
+            print("changed: " + file)
 
     for directory in get_present_directories():
         renamer(form_path(directory))

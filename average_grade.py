@@ -18,5 +18,3 @@ while True:
 
 print("Average: " + str(sum / dividend))
 print("         ≙" + str((17 - (sum / dividend)) / 3))
-
-temp = 1.7857142857142858

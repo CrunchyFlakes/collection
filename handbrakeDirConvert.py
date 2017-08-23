@@ -16,11 +16,11 @@ already_converted_txt = open("handbrakelog.txt", "r+")
 already_converted_list = already_converted_txt.readlines()
 already_converted_txt.close()
 print("deleting: " + get_output_file(already_converted_list[-1]))
-#already_converted_txt = open("handbrakelog.txt", "w")
-#already_converted_txt.writelines(already_converted_list[:-1])
-#already_converted_txt.close()
+already_converted_txt = open("handbrakelog.txt", "w")
+already_converted_txt.writelines(already_converted_list[:-1])
+already_converted_txt.close()
 
-#os.remove(get_output_file(already_converted_list[-1][:-1]))
+os.remove(get_output_file(already_converted_list[-1][:-1]))
 
 
 def mainfunction(current_working_dir):

@@ -1,61 +1,122 @@
 #!/usr/bin/env python3
-# rename folders and files of copied simpsons dvds
+# rename folders and files of copied simpsons dvds (only seasons and their disks)
 
 import os
+import sys
 
-working_directory = "/media/bigdisk/new movies/"
+# get list of input parameters
+target_directories = sys.argv
+del target_directories[0]
+# target_directories = []
+if len(target_directories) <= 0:
+    sys.exit("Please input target directories as input parameters!")
 
-def renamer(current_working_directory):
-    directory_listed = os.listdir(current_working_directory)
-    no_directory_found = True
 
-    for object in directory_listed:
-        # TODO: remove
-        object = str(object)
-        if os.path.isdir(current_working_directory + "/" + object) and "simpsons" in object.lower():
-            no_directory_found = None
-            object_lower = object.lower().split(".")
-            index_counter = 0
-            season = None
-            disc = None
-            for string in object_lower:
-                if string == "season":
-                    season = object_lower[index_counter + 1]
-                elif "s" in string and (len(string) == 2 or len(string) == 3):
-                    season = string.replace("s", "")
-                if "d" in string and len(string) == 2:
-                    disc = string[1]
-                elif string == "disc":
-                    disc = object_lower[index_counter + 1]
-                index_counter += 1
-            new_directory_name = "simpsons_" + "s" + season
-            if not disc == None:
-                print("season: " + season + " disc: " + disc)
-                new_directory_name += "_d" + disc
-            # rename subdirectories
-            renamer(current_working_directory + "/" + object)
-            # rename this directory
-            os.rename(current_working_directory + "/" + object, current_working_directory + "/" + new_directory_name)
+def renamer(target_directory_path):
 
-    if no_directory_found and "simpsons" in current_working_directory.split("/")[-1].lower():
-        episode_rename_map = {}
-        for episode in directory_listed:
+    def get_present_simpsons_directories():
+        present_simpsons_directories = []
+        for object in os.listdir(target_directory_path):
+            if os.path.isdir(form_path(object)) and "simpsons" in object.lower():
+                present_simpsons_directories.append(object)
+        return present_simpsons_directories
+
+    def get_present_simpsons_files():
+        present_simpsons_files = []
+        for object in os.listdir(target_directory_path):
+            if os.path.isfile(form_path(object)) and "simpsons" in object.lower():
+                present_simpsons_files.append(object)
+        return present_simpsons_files
+
+    def rename_folder(folder, season, disk=None):
+        new_directory_name = "simpsons_s" + str(season)
+        if disk is not None:
+            new_directory_name += "_d" + disk
+        os.rename(form_path(folder), form_path(new_directory_name))
+
+    def rename_file(file, season, episode, disk=None):
+        new_file_name = "simpsons_s" + season
+        if disk is not None:
+            new_file_name += "_d" + disk
+        new_file_name += "_e" + str(episode) + "." + file.split(".")[-1]
+        os.rename(form_path(file), form_path(new_file_name))
+
+    def get_ordered_simpsons_files(files):
+        episodes_numbered = {}
+        for episode in files:
             if "title" in episode:
                 episode_split = episode.split(".")
                 # get number
                 number = int(episode_split[0].replace("title", ""))
-                episode_rename_map[number] = episode
-            if "_e" in episode:
+                episodes_numbered[number] = episode
+            elif "_e" in episode and "_d" in episode:
+                episode_split = episode.split(".")[0].split("_")
+                number = None
+                for substring in episode_split:
+                    if "e" in substring and len(substring) == 2:
+                        number = int(substring.replace("e", ""))
+                number += int(get_disk(form_path(episode)) + "0")
+                episodes_numbered[number] = episode
+            elif "_e" in episode:
                 episode_split = episode.split(".")[0].split("_")
                 number = int(episode_split[-1].replace("e", ""))
-                episode_rename_map[number] = episode
-        sorted_keys = sorted(episode_rename_map.items())
-        i = 0
-        while i < len(sorted_keys):
-            old_episode_name = current_working_directory + "/" + sorted_keys[i][1]
-            new_episode_name = current_working_directory + "/" + current_working_directory.split("/")[-1].lower() + "_e" + str(i + 1) + ".mkv"
-            os.rename(old_episode_name, new_episode_name)
-            i += 1
+                episodes_numbered[number] = episode
+            else:
+                try:
+                    for substring in episode.split("."):
+                        if "s" in substring.lower() and "e" in substring.lower() and len(substring) == 6:
+                            number = int(substring[-2:])
+                            episodes_numbered[number] = episode
+                except:
+                    print(episode + " could not get information")
+        return sorted(episodes_numbered.items())
+
+    def get_season(folder_path):
+        folder_substrings = folder_path.lower().split("/")[-1]
+        folder_substrings = folder_substrings.split(string_divided_by(folder_substrings))
+        index_counter = 0
+        for substring in folder_substrings:
+            if substring == "season":
+                return folder_substrings[index_counter + 1]
+            elif "s" in substring and (len(substring) == 2 or len(substring) == 3):
+                return substring.replace("s", "")
+            index_counter += 1
+
+    def get_disk(path):
+        folder_substrings = path.lower().split("/")[-1]
+        folder_substrings = folder_substrings.split(string_divided_by(folder_substrings))
+        index_counter = 0
+        for substring in folder_substrings:
+            if "d" in substring and len(substring) == 2:
+                return substring[1]
+            elif substring == "disc":
+                return folder_substrings[index_counter + 1]
+            index_counter += 1
+
+    def string_divided_by(string):
+        count_underscore = str(string).count("_")
+        count_dot = str(string).count(".")
+        if count_dot > count_underscore:
+            return "."
+        elif count_underscore > count_dot:
+            return "_"
+
+    def form_path(object):
+        return target_directory_path + "/" + object
+
+    episode_number = 1
+    for present_pair in get_ordered_simpsons_files(get_present_simpsons_files()):
+        rename_file(present_pair[1], get_season(target_directory_path), episode_number)
+        episode_number += 1
+
+    for present_directory in get_present_simpsons_directories():
+        rename_folder(present_directory, get_season(form_path(present_directory)))
+
+    for present_directory in get_present_simpsons_directories():
+        new_target_directory = form_path(present_directory)
+        renamer(new_target_directory)
 
 
-renamer(working_directory)
+for working_directory in target_directories:
+    print("now working in directory: " + working_directory)
+    renamer(working_directory)
