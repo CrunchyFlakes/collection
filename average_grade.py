@@ -10,8 +10,11 @@ while True:
     grade = 100
     while int(grade) > 15 or int(grade) <= 0:
         grade = input(str(counter) + ": ")
+        if grade == "":
+            break
     if grade == "":
         break
+    # count first three grades x2
     if counter <= 3:
         dividend += 1
         sum += int(grade)
