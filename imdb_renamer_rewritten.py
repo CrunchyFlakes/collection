@@ -1,15 +1,16 @@
 #/usr/bin/env python3
 # rename movie files and their folders accordingly to the imdb website infos
 
+# NOT READY YET !!
 from imdbpie import Imdb
 import os
 
 imdb = Imdb()
 
-working_directory = "/media/baddie/testing"
+working_directory = "/media/bigdisk/movies"
 if working_directory[-1] == "/":
     working_directory = working_directory[:-1]
-leave_out = []
+leave_out = ["tv_shows"]
 
 def renamer(target_directory):
 

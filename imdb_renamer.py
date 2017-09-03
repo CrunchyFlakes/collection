@@ -3,7 +3,7 @@ import os
 
 imdb = Imdb()
 
-target_director= "/media/bigdisk/converted"
+target_director= "/media/bigdisk/movies"
 clone_director= None
 leave_out = ["simpsons", "tv_shows", "game_of_thrones"]
 
