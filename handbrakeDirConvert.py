@@ -19,12 +19,15 @@ output_script = open("Handbrake.sh", "w")
 already_converted_txt = open("handbrakelog.txt", "r+")
 already_converted_list = already_converted_txt.readlines()
 already_converted_txt.close()
-# print("deleting: " + get_output_file(already_converted_list[-1]))
-# already_converted_txt = open("handbrakelog.txt", "w")
-# already_converted_txt.writelines(already_converted_list[:-1])
-# already_converted_txt.close()
-#
-# os.remove(get_output_file(already_converted_list[-1][:-1]))
+delete_decision = input("Want to delete last converted episode? (yes/no): ")
+if delete_decision == "yes":
+    print("deleting: " + get_output_file(already_converted_list[-1]))
+    already_converted_txt = open("handbrakelog.txt", "w")
+    already_converted_txt.writelines(already_converted_list[:-1])
+    already_converted_txt.close()
+
+    os.remove(get_output_file(already_converted_list[-1][:-1]))
+    already_converted_list = already_converted_list[:-1]
 
 
 def mainfunction(current_working_dir):
@@ -38,7 +41,7 @@ def mainfunction(current_working_dir):
             for converted_file in already_converted_list:
                 if converted_file == input_file + "\n":
                     already_converted = True
-            if not already_converted and "supernatural" not in content and "thrones" not in content: #and ("futurama_s01" in content or "futurama_s02" in content or "futurama_s03" in content or "futurama_s04" in content or "futurama_s05" in content): #and "simpsons" not in content:
+            if not already_converted and "thrones" not in content: #and ("futurama_s01" in content or "futurama_s02" in content or "futurama_s03" in content or "futurama_s04" in content or "futurama_s05" in content): #and "simpsons" not in content:
                 if not os.path.exists(output_structured_directory):
                     os.makedirs(output_structured_directory)
                 output_file = get_output_file(input_file)

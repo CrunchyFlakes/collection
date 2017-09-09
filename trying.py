@@ -1,5 +1,6 @@
 from imdbpie import Imdb
+import os
 
 imdb = Imdb()
 
-print(imdb.search_for_title("big hero 6"))
+print(imdb.search_for_title("paddington"))
