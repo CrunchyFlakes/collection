@@ -8,7 +8,7 @@ globalDeskEntries = '/usr/share/applications/'
 #localDeskEntries = '~/.local/share/applications/'
 
 entriesToHide = []
-entriesToHide.extend(["org.pantheon.scratch.desktop", "JB-jvisualvm-jdk8.desktop", "JB-jconsole-jdk8.desktop", "JB-mission-control-jdk8.desktop", "JB-java-jdk8.desktop", "JB-javaws-jdk8.desktop", "maya-calendar.desktop", "org.pantheon.snap.desktop", "epiphany.desktop", "org.pantheon.mail.desktop", "gala-multitaskingview.desktop", "org.pantheon.noise.desktop", "org.pantheon.photos.desktop", "simple-scan.desktop", "org.pantheon.audience.desktop" ])
+entriesToHide.extend(["menulibre.desktop", "libreoffice-writer.desktop", "libreoffice-math.desktop", "libreoffice-impress.desktop", "libreoffice-draw.desktop", "libreoffice-calc.desktop", "libreoffice-base.desktop", "gdebi.desktop", "io.elementary.appcenter.desktop", "org.pantheon.scratch.desktop", "JB-jvisualvm-jdk8.desktop", "JB-jconsole-jdk8.desktop", "JB-mission-control-jdk8.desktop", "JB-java-jdk8.desktop", "JB-javaws-jdk8.desktop", "maya-calendar.desktop", "org.pantheon.snap.desktop", "epiphany.desktop", "org.pantheon.mail.desktop", "gala-multitaskingview.desktop", "org.pantheon.noise.desktop", "org.pantheon.photos.desktop", "simple-scan.desktop", "org.pantheon.audience.desktop" ])
 
 # check if run with root permissions
 if not os.geteuid() == 0:
