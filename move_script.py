@@ -14,7 +14,7 @@ for object in directory_listed:
             if "s" in splitter and len(splitter) < 4:
                 season = int(splitter.replace("s", ""))
                 series = os.getcwd().split("/")[-1]
-                season_folder_path = os.getcwd() + "/" + str(series) + "_" + str(season)
+                season_folder_path = os.getcwd() + "/" + str(series) + "_s" + str(season)
                 if not os.path.exists(season_folder_path):
                     os.makedirs(season_folder_path)
                 os.rename(object_path, season_folder_path + "/" + object_path.split("/")[-1])
