@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc177fe-01ee-43f4-a677-ccb6a55e0e57" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_lengthsum.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eosdebloater.py" afterPath="$PROJECT_DIR$/eosdebloater.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handbrakeDirConvert.py" afterPath="$PROJECT_DIR$/handbrakeDirConvert.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trying.py" afterPath="$PROJECT_DIR$/trying.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +23,7 @@
       <file leaf-file-name="handbrakeDirConvert.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handbrakeDirConvert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
+            <state relative-caret-position="212">
               <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
               <folding />
             </state>
@@ -35,38 +33,52 @@
       <file leaf-file-name="Handbrake.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Handbrake.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+            <state relative-caret-position="225">
+              <caret line="15" column="90" lean-forward="true" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eosdebloater.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/eosdebloater.py">
+      <file leaf-file-name="simpsonscleaner.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simpsonscleaner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="33" selection-end-column="91" />
+              <folding>
+                <element signature="e#88#105#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simpsons_renamer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simpsons_renamer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="106" column="4" lean-forward="true" selection-start-line="106" selection-start-column="4" selection-end-line="116" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="football_calendar.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/football_calendar.py">
+      <file leaf-file-name="media_lengthsum.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/media_lengthsum.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
-              <folding />
+            <state relative-caret-position="17">
+              <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chemistry.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chemistry.py">
+      <file leaf-file-name="handbrakelogtest.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/handbrakelogtest.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="74" lean-forward="false" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,33 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trying.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trying.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imdb_renamer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imdb_renamer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="handbrakelog.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handbrakelog.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27285">
-              <caret line="1819" column="54" lean-forward="false" selection-start-line="1819" selection-start-column="54" selection-end-line="1819" selection-end-column="54" />
+            <state relative-caret-position="326">
+              <caret line="2477" column="37" lean-forward="false" selection-start-line="2477" selection-start-column="37" selection-end-line="2477" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -119,6 +109,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -141,6 +141,7 @@
       <find>futurama</find>
       <find>s27_e03</find>
       <find>futurama_s03_e15</find>
+      <find>adventure</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,11 +171,12 @@
         <option value="$PROJECT_DIR$/imdb_renamer.py" />
         <option value="$PROJECT_DIR$/sleep_calc.py" />
         <option value="$PROJECT_DIR$/move_script.py" />
-        <option value="$PROJECT_DIR$/handbrakelog.txt" />
         <option value="$PROJECT_DIR$/trying.py" />
         <option value="$PROJECT_DIR$/handbrakeDirConvert.py" />
-        <option value="$PROJECT_DIR$/Handbrake.sh" />
         <option value="$PROJECT_DIR$/eosdebloater.py" />
+        <option value="$PROJECT_DIR$/Handbrake.sh" />
+        <option value="$PROJECT_DIR$/handbrakelog.txt" />
+        <option value="$PROJECT_DIR$/media_lengthsum.py" />
       </list>
     </option>
   </component>
@@ -198,6 +200,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,7 +213,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,7 +230,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.handbrakeDirConvert">
+  <component name="RunManager" selected="Python.media_lengthsum">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -293,7 +295,7 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration name="chemistry" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="football_calendar" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -305,7 +307,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="collection" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chemistry.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/football_calendar.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -344,7 +346,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="sleep_calc" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="media_lengthsum" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -356,7 +358,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="collection" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sleep_calc.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/media_lengthsum.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -380,18 +382,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.handbrakeDirConvert" />
-      <item index="1" class="java.lang.String" itemvalue="Python.sleep_calc" />
-      <item index="2" class="java.lang.String" itemvalue="Python.chemistry" />
-      <item index="3" class="java.lang.String" itemvalue="Python.trying" />
-      <item index="4" class="java.lang.String" itemvalue="Python.imdb_renamer" />
+      <item index="1" class="java.lang.String" itemvalue="Python.trying" />
+      <item index="2" class="java.lang.String" itemvalue="Python.imdb_renamer" />
+      <item index="3" class="java.lang.String" itemvalue="Python.football_calendar" />
+      <item index="4" class="java.lang.String" itemvalue="Python.media_lengthsum" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.handbrakeDirConvert" />
-        <item index="1" class="java.lang.String" itemvalue="Python.imdb_renamer" />
-        <item index="2" class="java.lang.String" itemvalue="Python.trying" />
-        <item index="3" class="java.lang.String" itemvalue="Python.sleep_calc" />
-        <item index="4" class="java.lang.String" itemvalue="Python.chemistry" />
+        <item index="0" class="java.lang.String" itemvalue="Python.media_lengthsum" />
+        <item index="1" class="java.lang.String" itemvalue="Python.handbrakeDirConvert" />
+        <item index="2" class="java.lang.String" itemvalue="Python.football_calendar" />
+        <item index="3" class="java.lang.String" itemvalue="Python.imdb_renamer" />
+        <item index="4" class="java.lang.String" itemvalue="Python.trying" />
       </list>
     </recent_temporary>
   </component>
@@ -633,7 +635,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504959074979</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="update">
+      <created>1505318345009</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1505318345009</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView">
@@ -646,12 +655,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="316" y="0" width="1920" height="1050" extended-state="6" />
+    <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3379092" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273495" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3273495" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -686,13 +696,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trying.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/handbrakeDirConvert.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -796,25 +799,11 @@
     <entry file="file://$PROJECT_DIR$/testlog.txt" />
     <entry file="file://$PROJECT_DIR$/usenetlog.txt" />
     <entry file="file://$PROJECT_DIR$/write names to file.py" />
-    <entry file="file://$PROJECT_DIR$/simpsonscleaner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/handbrakeDirConvertBash.sh" />
     <entry file="file://$PROJECT_DIR$/football_calendar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -839,13 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpsons_renamer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -860,20 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Handbraketest.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handbrake_dir_convert_rewritten.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imdb_renamer_rewritten.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -881,49 +849,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handbrakelogtest.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sleep_calc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/football_calendar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chemistry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="74" lean-forward="false" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/average_grade.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/move_script.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,35 +874,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handbrakelog.txt">
+    <entry file="file://$PROJECT_DIR$/eosdebloater.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27285">
-          <caret line="1819" column="54" lean-forward="false" selection-start-line="1819" selection-start-column="54" selection-end-line="1819" selection-end-column="54" />
+        <state relative-caret-position="390">
+          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handbraketest.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chemistry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="74" lean-forward="false" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/football_calendar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handbrake_dir_convert_rewritten.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-778">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="20" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handbrakeDirConvert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
+        <state relative-caret-position="212">
           <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/move_script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/average_grade.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Handbrake.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="225">
+          <caret line="15" column="90" lean-forward="true" selection-start-line="15" selection-start-column="90" selection-end-line="15" selection-end-column="90" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eosdebloater.py">
+    <entry file="file://$PROJECT_DIR$/simpsonscleaner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="33" selection-end-column="91" />
+          <folding>
+            <element signature="e#88#105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpsons_renamer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="106" column="4" lean-forward="true" selection-start-line="106" selection-start-column="4" selection-end-line="116" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handbrakelogtest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handbrakelog.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="2477" column="37" lean-forward="false" selection-start-line="2477" selection-start-column="37" selection-end-line="2477" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media_lengthsum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
