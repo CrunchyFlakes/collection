@@ -13,7 +13,7 @@ try:
     if target_directory[-1] == "/":
         target_directory = target_directory[:-1]
 except:
-
+    print("no input argument, continuing with standard directory")
 
 
 
