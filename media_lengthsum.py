@@ -2,10 +2,19 @@
 
 import os
 import subprocess
+import sys
 
 lengthsum = 0
 
 target_directory = "/media/bigdisk/converted"
+
+try:
+    target_directory = sys.argv[1]
+    if target_directory[-1] == "/":
+        target_directory = target_directory[:-1]
+except:
+
+
 
 
 def renamer(target_directory_path):
