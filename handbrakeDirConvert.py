@@ -41,7 +41,7 @@ def mainfunction(current_working_dir):
             for converted_file in already_converted_list:
                 if converted_file == input_file + "\n":
                     already_converted = True
-            if not already_converted and "supernatural" not in content and "thrones" not in content: #and ("futurama_s01" in content or "futurama_s02" in content or "futurama_s03" in content or "futurama_s04" in content or "futurama_s05" in content): #and "simpsons" not in content:
+            if not already_converted:# and "supernatural" not in content and "thrones" not in content: #and ("futurama_s01" in content or "futurama_s02" in content or "futurama_s03" in content or "futurama_s04" in content or "futurama_s05" in content): #and "simpsons" not in content:
                 if not os.path.exists(output_structured_directory):
                     os.makedirs(output_structured_directory)
                 output_file = get_output_file(input_file)
