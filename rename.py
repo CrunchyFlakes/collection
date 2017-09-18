@@ -1,6 +1,10 @@
 import os
+import sys
 
-working_directory = "/media/bigdisk/converted/tv_shows"
+target_directories = sys.argv
+del target_directories[0]
+
+
 
 
 def renamer(target_directory):
@@ -42,5 +46,10 @@ def renamer(target_directory):
 
     for directory in get_present_directories():
         renamer(form_path(directory))
+        replace_space_with_underscore(directory)
 
-renamer(working_directory)
+
+for target_directory in target_directories:
+    if target_directory[-1] == "/":
+        target_directory = target_directory[:-1]
+    renamer(target_directory)
