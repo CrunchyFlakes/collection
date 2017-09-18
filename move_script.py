@@ -17,12 +17,13 @@ for object in directory_listed:
                 season_folder_path = os.getcwd() + "/" + str(series) + "_s" + str(season)
                 if not os.path.exists(season_folder_path):
                     os.makedirs(season_folder_path)
-                os.rename(object_path, season_folder_path + "/" + object_path.split("/")[-1])
+                new_object_path = season_folder_path + "/" + object_path.split("/")[-1]
+                os.rename(object_path, new_object_path)
                 print(object_path + " moved to: " + season_folder_path + "/" + object_path.split("/")[-1])
                 if " " in object_path:
-                    object_path_split = object_path.split("/")
-                    object_path_split[-1] = object_path_split[-1].replace(" ", "_").lower()
-                    new_object_path = "/".join(object_path_split)
+                    new_object_path_split = new_object_path.split("/")
+                    new_object_path_split[-1] = new_object_path_split[-1].replace(" ", "_").lower()
+                    new_object_path = "/".join(new_object_path_split)
                     os.rename(object_path, new_object_path)
 
 print("finished")
