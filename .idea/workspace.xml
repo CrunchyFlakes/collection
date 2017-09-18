@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4cc177fe-01ee-43f4-a677-ccb6a55e0e57" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/renameavi.py" afterPath="$PROJECT_DIR$/rename.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handbrakeDirConvert.py" afterPath="$PROJECT_DIR$/handbrakeDirConvert.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handbrake_dir_convert_rewritten.py" afterPath="$PROJECT_DIR$/handbrake_dir_convert_rewritten.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,28 +36,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-360">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="simpsonscleaner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simpsonscleaner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="33" selection-end-column="91" />
-              <folding>
-                <element signature="e#88#105#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="simpsons_renamer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simpsons_renamer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1575">
-              <caret line="106" column="4" lean-forward="false" selection-start-line="106" selection-start-column="4" selection-end-line="116" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -104,11 +83,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handbrake_dir_convert_rewritten.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="handbrake_dir_convert_rewritten.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handbrake_dir_convert_rewritten.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+              <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rename.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rename.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="renamer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/renamer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -176,8 +175,9 @@
         <option value="$PROJECT_DIR$/Handbraketest.sh" />
         <option value="$PROJECT_DIR$/Handbrake.sh" />
         <option value="$PROJECT_DIR$/handbrakelog.txt" />
-        <option value="$PROJECT_DIR$/handbrake_dir_convert_rewritten.py" />
         <option value="$PROJECT_DIR$/handbrakeDirConvert.py" />
+        <option value="$PROJECT_DIR$/handbrake_dir_convert_rewritten.py" />
+        <option value="$PROJECT_DIR$/rename.py" />
       </list>
     </option>
   </component>
@@ -231,7 +231,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.handbrake_dir_convert_rewritten">
+  <component name="RunManager" selected="Python.media_lengthsum">
     <configuration name="Handbraketest.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="/bin/bash" />
@@ -383,10 +383,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.handbrake_dir_convert_rewritten" />
-        <item index="1" class="java.lang.String" itemvalue="Python.handbrakeDirConvert" />
-        <item index="2" class="java.lang.String" itemvalue="Bash.Handbraketest.sh" />
-        <item index="3" class="java.lang.String" itemvalue="Python.media_lengthsum" />
+        <item index="0" class="java.lang.String" itemvalue="Python.media_lengthsum" />
+        <item index="1" class="java.lang.String" itemvalue="Python.handbrake_dir_convert_rewritten" />
+        <item index="2" class="java.lang.String" itemvalue="Python.handbrakeDirConvert" />
+        <item index="3" class="java.lang.String" itemvalue="Bash.Handbraketest.sh" />
         <item index="4" class="java.lang.String" itemvalue="Python.football_calendar" />
       </list>
     </recent_temporary>
@@ -657,7 +657,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505750981744</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="update">
+      <created>1505751005822</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1505751005822</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView">
@@ -829,20 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/renamer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/renameavi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3/dist-packages/apport_python_hook.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -948,16 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media_lengthsum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Handbraketest.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -998,10 +981,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/media_lengthsum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/handbrake_dir_convert_rewritten.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/renamer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rename.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>

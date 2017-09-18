@@ -1,6 +1,6 @@
 import os
 
-working_directory = "/media/bigdisk/converted"
+working_directory = "/media/bigdisk/converted/tv_shows"
 
 
 def renamer(target_directory):
@@ -13,8 +13,12 @@ def renamer(target_directory):
                 present_files.append(object)
         return present_files
 
+    def replace_space_with_underscore(file):
+        new_filename = str(file).replace(" ", "_").lower()
+        os.rename(form_path(file), form_path(new_filename))
+
     def change_extension_to_mkv(file):
-        new_filename = str(file).replace(".avi", ".mkv")
+        new_filename = str(file).replace(".avi", ".mkv").replace(" ", "_").lower()
         os.rename(form_path(file), form_path(new_filename))
 
     def get_present_directories():
@@ -32,6 +36,9 @@ def renamer(target_directory):
         if file_ending == "avi":
             change_extension_to_mkv(file)
             print("changed: " + file)
+        else:
+            replace_space_with_underscore(file)
+
 
     for directory in get_present_directories():
         renamer(form_path(directory))

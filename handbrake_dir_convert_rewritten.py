@@ -21,12 +21,12 @@ def sort_to_be_converted_through_preference():
     for preference in preference_list:
         for x in range(1, (len(to_be_converted))):
             if preference in to_be_converted[x]:
-                index = x - 1
+                to_be_switched_with = x - 1
                 while True:
-                    if preference in to_be_converted[index] or index == -1:
+                    if preference in to_be_converted[to_be_switched_with] or to_be_switched_with == -1:
                         break
-                    swap(index, index + 1)
-                    index += -1
+                    swap(to_be_switched_with, to_be_switched_with + 1)
+                    to_be_switched_with += -1
 
 
 def get_output_file_path(input_file_path):
