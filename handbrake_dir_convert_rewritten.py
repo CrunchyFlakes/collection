@@ -7,12 +7,13 @@ output_directory = "/media/bigdisk/converted/"
 
 script_working_dir = "/media/bigdisk/movies/"
 
-leave_out_list = []
-to_be_converted = []
+# put in series to leave out
+leave_out_list = ["game", "supernatural"]
 
 # order matters (last converted first)
 preference_list = ["adventure", "family", "rick"]
 
+to_be_converted = []
 
 def sort_to_be_converted_through_preference():
     def swap(i_x, i_y):
@@ -46,7 +47,7 @@ already_converted_txt = open("handbrakelog.txt", "r+")
 already_converted_list = already_converted_txt.readlines()
 already_converted_txt.close()
 print("deleting: " + get_output_file_path(already_converted_list[-1]))
-already_converted_txt = open("handbrakelog.txt", "r+")
+already_converted_txt = open("handbrakelog.txt", "w")
 if input("delete last converted? (yes/no): ") == "yes":
     delete_last_converted_file()
     already_converted_list = already_converted_list[:-1]
