@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # convert multiple files through handbrake and keep directory structure
+# !!!!!!!! outdated !!!!!!!
 
 import os
 

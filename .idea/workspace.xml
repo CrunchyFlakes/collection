@@ -7,7 +7,6 @@
     <list default="true" id="4cc177fe-01ee-43f4-a677-ccb6a55e0e57" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handbrakeDirConvert.py" afterPath="$PROJECT_DIR$/handbrakeDirConvert.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handbrake_dir_convert_rewritten.py" afterPath="$PROJECT_DIR$/handbrake_dir_convert_rewritten.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +23,8 @@
       <file leaf-file-name="handbrakeDirConvert.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handbrakeDirConvert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="43" column="38" lean-forward="false" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+            <state relative-caret-position="30">
+              <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -175,10 +174,10 @@
         <option value="$PROJECT_DIR$/move_script.py" />
         <option value="$PROJECT_DIR$/handbrakelogtest.txt" />
         <option value="$PROJECT_DIR$/Handbraketest.sh" />
-        <option value="$PROJECT_DIR$/handbrakeDirConvert.py" />
         <option value="$PROJECT_DIR$/Handbrake.sh" />
         <option value="$PROJECT_DIR$/handbrakelog.txt" />
         <option value="$PROJECT_DIR$/handbrake_dir_convert_rewritten.py" />
+        <option value="$PROJECT_DIR$/handbrakeDirConvert.py" />
       </list>
     </option>
   </component>
@@ -651,7 +650,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505681929179</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="update">
+      <created>1505750981743</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1505750981744</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -960,14 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handbrakeDirConvert.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="43" column="38" lean-forward="false" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/handbrakelog.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-90">
@@ -988,6 +986,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-360">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handbrakeDirConvert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
           <folding />
         </state>
       </provider>
