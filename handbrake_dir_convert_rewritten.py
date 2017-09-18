@@ -46,7 +46,7 @@ already_converted_txt = open("handbrakelog.txt", "r+")
 already_converted_list = already_converted_txt.readlines()
 already_converted_txt.close()
 print("deleting: " + get_output_file_path(already_converted_list[-1]))
-already_converted_txt = open("handbrakelog.txt", "w")
+already_converted_txt = open("handbrakelog.txt", "r+")
 if input("delete last converted? (yes/no): ") == "yes":
     delete_last_converted_file()
     already_converted_list = already_converted_list[:-1]
