@@ -23,6 +23,6 @@ for object in directory_listed:
                     object_path_split = object_path.split("/")
                     object_path_split[-1] = object_path_split[-1].replace(" ", "_").lower()
                     new_object_path = "/".join(object_path_split)
-                    os.rename(object_path, object_path.replace(" ", "_").lower())
+                    os.rename(object_path, new_object_path)
 
 print("finished")
