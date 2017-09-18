@@ -19,5 +19,7 @@ for object in directory_listed:
                     os.makedirs(season_folder_path)
                 os.rename(object_path, season_folder_path + "/" + object_path.split("/")[-1])
                 print(object_path + " moved to: " + season_folder_path + "/" + object_path.split("/")[-1])
+                if " " in object_path:
+                    os.rename(object_path, object_path.replace(" ", "_").lower())
 
 print("finished")
