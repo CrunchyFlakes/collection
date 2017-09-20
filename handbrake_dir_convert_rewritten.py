@@ -46,13 +46,13 @@ output_script = open("Handbrake.sh", "w")
 already_converted_txt = open("handbrakelog.txt", "r")
 already_converted_list = already_converted_txt.readlines()
 already_converted_txt.close()
-#print("deleting: " + get_output_file_path(already_converted_list[-1]))
-already_converted_txt = open("handbrakelog.txt", "w")
+print("delete?: " + get_output_file_path(already_converted_list[-1]))
 if input("delete last converted? (yes/no): ") == "yes":
+    already_converted_txt = open("handbrakelog.txt", "w")
     delete_last_converted_file()
     already_converted_list = already_converted_list[:-1]
-already_converted_txt.writelines(already_converted_list)
-already_converted_txt.close()
+    already_converted_txt.writelines(already_converted_list)
+    already_converted_txt.close()
 
 
 def mainfunction(current_working_dir):
