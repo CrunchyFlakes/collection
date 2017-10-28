@@ -2,18 +2,53 @@
 # convert multiple files through handbrake and keep directory structure
 
 import os
+import sys
+
+
 
 output_directory = "/media/bigdisk/converted/"
 
 script_working_dir = "/media/bigdisk/movies/"
 
 # put in series to leave out
-leave_out_list = ["supernatural"]
+leave_out_list = []
 
 # order matters (last converted first)
-preference_list = ["adventure", "family", "rick"]
+preference_list = ["rick"]
 
 to_be_converted = []
+
+input_arguments = sys.argv
+del input_arguments[0]
+
+i = 0
+for argument in input_arguments:
+    if argument == "-pref":
+        i += 1
+        preference_list.append(input_arguments[i])
+        while True:
+            try:
+                if not input_arguments[i + 1][0] == "-":
+                    i += 1
+                    preference_list.append(input_arguments[i])
+                else:
+                    break
+            except:
+                break
+    elif argument == "-out":
+        i += 1
+        leave_out_list.append(input_arguments[i])
+        while True:
+            try:
+                if not input_arguments[i + 1][0] == "-":
+                    i += 1
+                    leave_out_list.append(input_arguments[i])
+                else:
+                    break
+            except:
+                break
+    i += 1
+
 
 def sort_to_be_converted_through_preference():
     def swap(i_x, i_y):
@@ -46,10 +81,12 @@ output_script = open("Handbrake.sh", "w")
 already_converted_txt = open("handbrakelog.txt", "r")
 already_converted_list = already_converted_txt.readlines()
 already_converted_txt.close()
-print("delete?: " + get_output_file_path(already_converted_list[-1]))
-if input("delete last converted? (yes/no): ") == "yes":
+
+
+if already_converted_list[-1][-2] != "1":
     already_converted_txt = open("handbrakelog.txt", "w")
     delete_last_converted_file()
+    print("deleted: " + get_output_file_path(already_converted_list[-1][:-1]))
     already_converted_list = already_converted_list[:-1]
     already_converted_txt.writelines(already_converted_list)
     already_converted_txt.close()
@@ -65,7 +102,7 @@ def mainfunction(current_working_dir):
 
     def is_already_converted(input_file):
         for converted_file in already_converted_list:
-            if converted_file == input_file + "\n":
+            if input_file in converted_file:
                 return True
         return None
 
@@ -94,12 +131,13 @@ def mainfunction(current_working_dir):
 
 
 mainfunction(script_working_dir)
-to_be_converted.sort()
+to_be_converted.sort(key=str.lower)
 sort_to_be_converted_through_preference()
 for input_file in to_be_converted:
-    output_script.write("echo \"" + input_file + "\"" + " >> handbrakelog.txt\n")
+    output_script.write("echo -n \"" + input_file + "\"" + " >> handbrakelog.txt\n")
     output_script.write(
         "HandBrakeCLI --preset-import-file /home/mtoepperwien/Documents/customOne.json --preset customOne -i \"" + input_file + "\" -o \"" + get_output_file_path(input_file) + "\" --audio-lang-list deu,eng --all-audio -f av_mkv\n")
+    output_script.write("echo \" 1\" >> handbrakelog.txt\n")
 output_script.write("echo Finished!\n")
 output_script.close()
 print("finished")

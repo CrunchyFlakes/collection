@@ -36,12 +36,7 @@ def renamer(target_directory):
         return target_directory + "/" + object
 
     for file in get_present_files():
-        file_ending = file.split(".")[-1]
-        if file_ending == "avi":
-            change_extension_to_mkv(file)
-            print("changed: " + file)
-        else:
-            replace_space_with_underscore(file)
+        replace_space_with_underscore(file)
 
 
     for directory in get_present_directories():
