@@ -1,10 +1,26 @@
 import os
 import sys
 
-target_directories = sys.argv
-del target_directories[0]
+input_arguments = sys.argv
+del input_arguments[0]
 
+target_directories = []
+replace_map = {}
+input_arguments.append("-replace")
+input_arguments.append("simpsons:the_simpsons")
 
+i = 0
+current_option = None
+for argument in input_arguments:
+    if argument[0] == "-":
+        current_option = argument
+        continue
+    if current_option is None:
+        target_directories.append(argument)
+    elif current_option == "-replace":
+        argument_splitted = argument.split(":")
+        replace_map[argument_splitted[0]] = argument_splitted[1]
+    i += 1
 
 
 def renamer(target_directory):
@@ -17,9 +33,18 @@ def renamer(target_directory):
                 present_files.append(object)
         return present_files
 
+    def replace_with(file):
+        for replace_key in replace_map:
+            if replace_key in file and not replace_map[replace_key] in file:
+                new_filename = file.replace(replace_key, replace_map[replace_key])
+                os.rename(form_path(file), form_path(new_filename))
+                return new_filename
+                break
+
     def replace_space_with_underscore(file):
         new_filename = str(file).replace(" ", "_").lower()
         os.rename(form_path(file), form_path(new_filename))
+        return new_filename
 
     def change_extension_to_mkv(file):
         new_filename = str(file).replace(".avi", ".mkv").replace(" ", "_").lower()
@@ -36,7 +61,8 @@ def renamer(target_directory):
         return target_directory + "/" + object
 
     for file in get_present_files():
-        replace_space_with_underscore(file)
+        file = replace_space_with_underscore(file)
+        file = replace_with(file)
 
 
     for directory in get_present_directories():
