@@ -6,8 +6,6 @@ del input_arguments[0]
 
 target_directories = []
 replace_map = {}
-input_arguments.append("-replace")
-input_arguments.append("simpsons:the_simpsons")
 
 i = 0
 current_option = None
