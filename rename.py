@@ -43,7 +43,12 @@ def renamer(target_directory):
                 break
 
     def replace_space_with_underscore(file):
-        new_filename = str(file).replace(" ", "_").lower()
+        new_filename = str(file).replace(" ", "_")
+        os.rename(form_path(file), form_path(new_filename))
+        return new_filename
+
+    def change_to_lower_case(file):
+        new_filename = str(file).lower()
         os.rename(form_path(file), form_path(new_filename))
         return new_filename
 
@@ -63,6 +68,7 @@ def renamer(target_directory):
 
     for file in get_present_files():
         file = replace_space_with_underscore(file)
+        file = change_to_lower_case(file)
         file = replace_with(file)
 
 
