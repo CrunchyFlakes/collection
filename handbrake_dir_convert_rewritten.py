@@ -18,6 +18,9 @@ preference_list = ["rick"]
 
 to_be_converted = []
 
+# only convert one (per input arguments)
+only_one = False
+
 input_arguments = sys.argv
 del input_arguments[0]
 
@@ -47,6 +50,8 @@ for argument in input_arguments:
                     break
             except:
                 break
+    elif argument == "-one":
+        only_one = True
     i += 1
 
 
@@ -138,6 +143,8 @@ for input_file in to_be_converted:
     output_script.write(
         "HandBrakeCLI --preset-import-file /home/mtoepperwien/Documents/customOne.json --preset customOne -i \"" + input_file + "\" -o \"" + get_output_file_path(input_file) + "\" --audio-lang-list deu,eng --all-audio -f av_mkv\n")
     output_script.write("echo \" 1\" >> handbrakelog.txt\n")
+    if only_one is True:
+        break
 output_script.write("echo Finished!\n")
 output_script.close()
 print("finished")
