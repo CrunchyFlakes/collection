@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# THIS IS A PROOF OF CONCEPT AND CURRENTLY NOT WORKING!
+
 from stem import Signal
 from stem.control import Controller
 from splinter import Browser
