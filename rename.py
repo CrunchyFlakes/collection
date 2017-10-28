@@ -11,6 +11,9 @@ i = 0
 current_option = None
 for argument in input_arguments:
     if argument[0] == "-":
+        if argument == "--help" or argument == "-help":
+            print("Syntax: rename directories [Options]\n\n-replace     old:new")
+            sys.exit()
         current_option = argument
         continue
     if current_option is None:
