@@ -10,6 +10,16 @@ globalDeskEntries = '/usr/share/applications/'
 entriesToHide = []
 entriesToHide.extend(["menulibre.desktop", "libreoffice-writer.desktop", "libreoffice-math.desktop", "libreoffice-impress.desktop", "libreoffice-draw.desktop", "libreoffice-calc.desktop", "libreoffice-base.desktop", "gdebi.desktop", "io.elementary.appcenter.desktop", "org.pantheon.scratch.desktop", "JB-jvisualvm-jdk8.desktop", "JB-jconsole-jdk8.desktop", "JB-mission-control-jdk8.desktop", "JB-java-jdk8.desktop", "JB-javaws-jdk8.desktop", "maya-calendar.desktop", "org.pantheon.snap.desktop", "epiphany.desktop", "org.pantheon.mail.desktop", "gala-multitaskingview.desktop", "org.pantheon.noise.desktop", "org.pantheon.photos.desktop", "simple-scan.desktop", "org.pantheon.audience.desktop" ])
 
+
+def search_and_add_entries(search_string):
+    all_entries = os.listdir(globalDeskEntries)
+    for entry_file in all_entries:
+        if search_string in entry_file:
+            entriesToHide.append(entry_file)
+
+
+search_and_add_entries("jdk")
+
 # check if run with root permissions
 if not os.geteuid() == 0:
     sys.exit("\nMissing root permissions! Run with sudo or as root.")
