@@ -7,7 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4cc177fe-01ee-43f4-a677-ccb6a55e0e57" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eosdebloater.py" afterPath="$PROJECT_DIR$/eosdebloater.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -362,13 +361,6 @@
       <option name="presentableId" value="Default" />
       <updated>1501059553400</updated>
     </task>
-    <task id="LOCAL-00008" summary="update">
-      <created>1501707892895</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1501707892895</updated>
-    </task>
     <task id="LOCAL-00009" summary="update">
       <created>1501952384192</created>
       <option name="number" value="00009" />
@@ -705,7 +697,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509197781337</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="updated eosdebloater">
+      <created>1509887674952</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1509887674953</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TodoView">
@@ -747,7 +746,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="updated eosdebloater" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated eosdebloater" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
