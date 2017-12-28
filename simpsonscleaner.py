@@ -34,9 +34,10 @@ def getLength(filename):
     return convertDurationStringToInt(getDurationString(ffprobe_result.stdout.readlines()))
 
 for file in os.listdir(os.getcwd()):
-    file_length = getLength(file)
-    if file_length < deletion_threshold_in_minutes or file_length > 30:
-        os.remove(file)
-        print(file + "with length: " + str(file_length) + "m" + " was removed!")
-    else:
-        print(file + "with length: " + str(file_length) + "m" + " was retained.")
+    if ".mkv" in file:
+        file_length = getLength(file)
+        if file_length < deletion_threshold_in_minutes or file_length > 30:
+            os.remove(file)
+            print(file + "with length: " + str(file_length) + "m" + " was removed!")
+        else:
+            print(file + "with length: " + str(file_length) + "m" + " was retained.")
