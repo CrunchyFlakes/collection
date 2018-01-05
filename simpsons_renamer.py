@@ -8,8 +8,10 @@ import sys
 target_directories = sys.argv
 del target_directories[0]
 # target_directories = []
+target_directories.append("/media/bigdisk/movies")
 if len(target_directories) <= 0:
     sys.exit("Please input target directories as input parameters!")
+
 
 
 def renamer(target_directory_path):
@@ -75,6 +77,7 @@ def renamer(target_directory_path):
         folder_substrings = folder_path.lower().split("/")[-1]
         folder_substrings = folder_substrings.split(string_divided_by(folder_substrings))
         index_counter = 0
+        return 4
         for substring in folder_substrings:
             if substring == "season":
                 return folder_substrings[index_counter + 1]
