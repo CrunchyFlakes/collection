@@ -3,6 +3,7 @@
 
 import os
 import sys
+import subprocess
 
 
 
@@ -134,11 +135,48 @@ def mainfunction(current_working_dir):
             mainfunction(input_object_path + "/")
 
 
+def getLength(file_path):
+
+    def getDurationString(ffprobe_output):
+        for line in ffprobe_output:
+            if "Duration" in str(line):
+                line = str(line).split(" ")
+                index_counter = 0
+                for lineSnippet in line:
+                    if lineSnippet == "Duration:":
+                        return line[index_counter + 1]
+                    index_counter += 1
+
+    def convertDurationStringToInt(duration_string):
+        try:
+            duration_string = duration_string.replace(',', '')
+            duration_strings = duration_string.split(":")
+
+            duration_in_minutes = ( 60 * int(duration_strings[0]) ) + int(duration_strings[1]) + round( float(duration_strings[2]) / 60 )
+        except:
+            duration_in_minutes = 0
+            print("fail: " + file_path)
+
+        return duration_in_minutes
+
+
+
+    ffprobe_result = subprocess.Popen(["ffprobe", file_path],
+                              stdout = subprocess.PIPE, stderr=subprocess.STDOUT)
+
+    return convertDurationStringToInt(getDurationString(ffprobe_result.stdout.readlines()))
+
+
 
 mainfunction(script_working_dir)
 to_be_converted.sort(key=str.lower)
 sort_to_be_converted_through_preference()
+
+total_length = 0
+
 for input_file in to_be_converted:
+    total_length += getLength(input_file)
+
     output_script.write("echo -n \"" + input_file + "\"" + " >> handbrakelog.txt\n")
     output_script.write(
         "HandBrakeCLI --preset-import-file /home/mtoepperwien/Documents/customOne.json --preset customOne -i \"" + input_file + "\" -o \"" + get_output_file_path(input_file) + "\" --audio-lang-list deu,eng --all-audio -f av_mkv\n")
@@ -147,4 +185,5 @@ for input_file in to_be_converted:
         break
 output_script.write("echo Finished!\n")
 output_script.close()
+print("total length: " + str(total_length) + "m")
 print("finished")
