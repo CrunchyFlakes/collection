@@ -4,6 +4,7 @@
 import os
 import sys
 import subprocess
+import time
 
 
 
@@ -135,7 +136,7 @@ def mainfunction(current_working_dir):
             mainfunction(input_object_path + "/")
 
 
-def getLength(file_path):
+def get_duration(file_path):
 
     def getDurationString(ffprobe_output):
         for line in ffprobe_output:
@@ -172,10 +173,14 @@ mainfunction(script_working_dir)
 to_be_converted.sort(key=str.lower)
 sort_to_be_converted_through_preference()
 
-total_length = 0
+output_script.write("#!/usr/bin/env bash\n")
+output_script.write("echo \"#### " + time.strftime("%d/%m/%Y %H:%M") + " ####\"\n")
+
+
+total_duration = 0
 
 for input_file in to_be_converted:
-    total_length += getLength(input_file)
+    total_duration += get_duration(input_file)
 
     output_script.write("echo -n \"" + input_file + "\"" + " >> handbrakelog.txt\n")
     output_script.write(
@@ -185,5 +190,5 @@ for input_file in to_be_converted:
         break
 output_script.write("echo Finished!\n")
 output_script.close()
-print("total length: " + str(total_length) + "m")
+print("total duration: " + str(total_duration) + "m")
 print("finished")
