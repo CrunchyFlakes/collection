@@ -3,7 +3,7 @@
 import os
 
 
-working_dir = "/media/bigdisk/movies/simpsons_s4/"
+working_dir = "/media/bigdisk/movies/simpson4/"
 os.chdir(working_dir)
 
 def form_path(folder_path, file):

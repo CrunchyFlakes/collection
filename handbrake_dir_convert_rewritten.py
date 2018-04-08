@@ -8,15 +8,15 @@ import time
 
 
 
-output_directory = "/media/bigdisk/converted/"
+output_directory = "/media/biggie/converted/"
 
-script_working_dir = "/media/bigdisk/movies/"
+script_working_dir = "/media/biggie/movies/"
 
 # put in series to leave out
 leave_out_list = []
 
 # order matters (last converted first)
-preference_list = ["rick"]
+preference_list = []
 
 to_be_converted = []
 
@@ -90,6 +90,15 @@ already_converted_list = already_converted_txt.readlines()
 already_converted_txt.close()
 
 
+# i = 0
+# for line in already_converted_list:
+#     if line[0] == '#':
+#         del already_converted_list[i]
+#     else:
+#         print(line)
+#     i += 1
+
+
 if already_converted_list[-1][-2] != "1":
     already_converted_txt = open("handbrakelog.txt", "w")
     delete_last_converted_file()
@@ -97,6 +106,7 @@ if already_converted_list[-1][-2] != "1":
     already_converted_list = already_converted_list[:-1]
     already_converted_txt.writelines(already_converted_list)
     already_converted_txt.close()
+
 
 
 def mainfunction(current_working_dir):
@@ -174,7 +184,6 @@ to_be_converted.sort(key=str.lower)
 sort_to_be_converted_through_preference()
 
 output_script.write("#!/usr/bin/env bash\n")
-output_script.write("echo \"#### " + time.strftime("%d/%m/%Y %H:%M") + " ####\"\n")
 
 
 total_duration = 0
@@ -190,5 +199,5 @@ for input_file in to_be_converted:
         break
 output_script.write("echo Finished!\n")
 output_script.close()
-print("total duration: " + str(total_duration) + "m")
+print("total duration: " + str(round((total_duration / 60) , 1)) + "h")
 print("finished")
