@@ -8,9 +8,9 @@ import time
 
 
 
-output_directory = "/media/biggie/converted/"
+output_directory = "/run/media/mtoepperwien/d5c4adfb-49a9-4432-8ce3-145c3390b28c/converted/"
 
-script_working_dir = "/media/biggie/movies/"
+script_working_dir = "/run/media/mtoepperwien/d5c4adfb-49a9-4432-8ce3-145c3390b28c/movies/"
 
 # put in series to leave out
 leave_out_list = []
@@ -83,6 +83,8 @@ def get_output_file_path(input_file_path):
 def delete_last_converted_file():
     os.remove(get_output_file_path(already_converted_list[-1][:-1]))
 
+
+already_converted_list = []
 
 output_script = open("Handbrake.sh", "w")
 already_converted_txt = open("handbrakelog.txt", "r")
