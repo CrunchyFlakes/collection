@@ -12,12 +12,13 @@ file = open("blu_spark_version.txt", "r+")
 
 version_installed = file.readline()
 
-if version_installed in title:
+version_index = title.find("blu_spark r")
+string_length = 13
+version = title[version_index:version_index + 13]
+
+if version_installed == version:
     print("newest version installed")
 else:
-    version_index = title.find("blu_spark r")
-    string_length = 13
-    version = title[version_index:version_index + 13]
     print(version)
     print(version_installed)
     print(title)
