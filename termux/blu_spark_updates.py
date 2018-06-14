@@ -19,6 +19,8 @@ else:
     string_length = 13
     version = title[version_index:version_index + 13]
     print(version)
+    print(version_installed)
+    print(title)
     notification_command = "termux-notification -t \"blu_spark Update\" -c \"New version" + version + "\" --action \"termux-open-url https://forum.xda-developers.com/devdb/project/?id=27466#downloads\""
     notification = subprocess.Popen(notification_command.split())
 
