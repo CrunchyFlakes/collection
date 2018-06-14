@@ -8,9 +8,9 @@ import time
 
 
 
-output_directory = "/run/media/mtoepperwien/d5c4adfb-49a9-4432-8ce3-145c3390b28c/converted/"
+output_directory = "/run/media/mtoepperwien/biggie/converted/"
 
-script_working_dir = "/run/media/mtoepperwien/d5c4adfb-49a9-4432-8ce3-145c3390b28c/movies/"
+script_working_dir = "/run/media/mtoepperwien/biggie/movies/"
 
 # put in series to leave out
 leave_out_list = []
@@ -87,9 +87,9 @@ def delete_last_converted_file():
 already_converted_list = []
 
 output_script = open("Handbrake.sh", "w")
-already_converted_txt = open("handbrakelog.txt", "r")
-already_converted_list = already_converted_txt.readlines()
-already_converted_txt.close()
+# already_converted_txt = open("handbrakelog.txt", "r")
+# already_converted_list = already_converted_txt.readlines()
+# already_converted_txt.close()
 
 
 # i = 0
@@ -101,13 +101,13 @@ already_converted_txt.close()
 #     i += 1
 
 
-if already_converted_list[-1][-2] != "1":
-    already_converted_txt = open("handbrakelog.txt", "w")
-    delete_last_converted_file()
-    print("deleted: " + get_output_file_path(already_converted_list[-1][:-1]))
-    already_converted_list = already_converted_list[:-1]
-    already_converted_txt.writelines(already_converted_list)
-    already_converted_txt.close()
+# if already_converted_list[-1][-2] != "1":
+#     already_converted_txt = open("handbrakelog.txt", "w")
+#     delete_last_converted_file()
+#     print("deleted: " + get_output_file_path(already_converted_list[-1][:-1]))
+#     already_converted_list = already_converted_list[:-1]
+#     already_converted_txt.writelines(already_converted_list)
+#     already_converted_txt.close()
 
 
 

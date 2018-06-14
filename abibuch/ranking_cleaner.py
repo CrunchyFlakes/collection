@@ -39,4 +39,4 @@ for question in questions.findall('Frage'):
 
 print("\n-----------\nnumber of questions: " + str(question_counter))
 newxml_tree = ET.ElementTree(newxml)
-newxml_tree.write('Rankings_cleaned.xml')
+newxml_tree.write('Rankings_final.xml')

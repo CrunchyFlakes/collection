@@ -13,7 +13,7 @@ def return_commentlist(name):
                     commentlist.append(str(data[1].text))
             return commentlist
 
-steckbriefe_tree = ET.parse('alle_Steckbriefe_edited.xml')
+steckbriefe_tree = ET.parse('alle_Steckbriefe_without_quotes.xml')
 steckbriefe_root = steckbriefe_tree.getroot()
 
 kommentare_tree = ET.parse('Kommentare.xml')
