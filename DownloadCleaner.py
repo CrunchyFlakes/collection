@@ -34,9 +34,9 @@ def remove_old(directory, deletion_threshold):
     current_time = time.time()
 
     for file in os.listdir(directory):
-        accessedTime = os.path.getatime(directory + file)
+        modifiedTime = os.path.getmtime(directory + file)
         # Difference of time now and last modified date
-        time_difference = current_time - accessedTime
+        time_difference = current_time - modifiedTime
         day_difference = sec_to_days(time_difference)
 
         # Delete file if older than deletion threshold
@@ -45,7 +45,7 @@ def remove_old(directory, deletion_threshold):
             global retainedCounter
 
             print(directory + file)
-            print("last modified: " + time.strftime(timeFormat, time.localtime(accessedTime)))
+            print("last modified: " + time.strftime(timeFormat, time.localtime(modifiedTime)))
             print("difference in days: " + str(day_difference))
             if os.path.isfile(directory + file):
                 send2trash(directory + file)
@@ -73,4 +73,4 @@ sys.stdout = open(get_script_path() + '/CleanerLog.txt', 'a')
 # Print date for logging
 print("#### " + time.strftime(timeFormat, time.localtime(time.time())))
 remove_old(DOWNLOAD_DIRECTORY, DELETION_THRESHOLD)
-print("Removed: " + str(deleteCounter )+ " || Retained: " + str(retainedCounter) + "\n")
+print("Removed: " + str(deleteCounter ) + " || Retained: " + str(retainedCounter) + "\n")
