@@ -44,7 +44,7 @@ def returnSum():
 
 
 
-print("Create new entry (0 to show entries, \"del\" to delete entry):")
+print("Create new entry (0 to show entries, \"del\" to delete entry, \"mult\" for multiple entries):")
 amount = input("Amount of money in €: ")
 if amount == "0":
     displayEntries()
@@ -57,6 +57,15 @@ elif amount == "del":
             entries = []
     else:
         deleteEntry(int(delete_index))
+elif amount == "mult":
+    amount = "placeholder"
+    while True:
+        amount = input("Amount of money in €: ")
+        if amount == "0" or amount == "":
+            break
+        amount = int(amount)
+        comment = input("Comment/Note: ")
+        addEntry(amount, date, comment)
 else:
     amount = int(amount)
     comment = input("Comment/Note: ")
