@@ -51,8 +51,12 @@ if amount == "0":
     print("Sum: " + str(returnSum()))
 elif amount == "del":
     displayEntries()
-    delete_index = int(input("delete entry number (index): "))
-    deleteEntry(delete_index)
+    delete_index = input("delete entry number (index) or \"all\": ")
+    if delete_index == "all":
+        if input("Sure? (y/n): ").lower() == "y":
+            entries = []
+    else:
+        deleteEntry(int(delete_index))
 else:
     amount = int(amount)
     comment = input("Comment/Note: ")
