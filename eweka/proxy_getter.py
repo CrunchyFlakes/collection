@@ -1,9 +1,20 @@
 #!/usr/bin/env python3
 # get proxies from free-proxy-list.net and check them
 
-
+import sys
 from lxml import html
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 import requests
+
+def wait_for_100_in_check():
+    print("waiting for completion")
+    while browser.find_element_by_xpath('//*[@id="s_persent"]').text != "100":
+        sleep(1)
+    print("proceeding")
 
 url = "https://free-proxy-list.net/"
 page = requests.get(url)
@@ -31,87 +42,72 @@ for row in proxy_table_html:
 
 proxies = []
 
+proxy_list_string = ""
+
 for proxy in proxy_list:
     proxy_ip_port = proxy[0] + ":" + proxy[1]
     print(proxy_ip_port)
+    proxy_list_string += proxy_ip_port + "\n"
     proxies.append(proxy_ip_port)
 
+browser = webdriver.Firefox()
+browser.get('https://hidemyna.me/en/proxy-checker/')
 
-# ## code from yousefissa/Proxy-Tester (github) (adapted)
-# # github.com/yousefissa, twitter @yousefnu
-#
-# from time import time
-# from requests import Session
-#
-# session = Session()
-# session.headers.update({
-#     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36'
-#                   '(KHTML, like Gecko) Chrome/56.0.2924.28 Safari/537.36'})
-#
-#
-# def mil_seconds():
-#     return int(round(time() * 1000))
-#
-#
-# # MAIN
-# # gets proxies and websites in a text file, rather than hard-coding them
-# sites = ["http://footlocker.com/", "http://adidas.com/", "http://reddit.com/", "http://google.com/"]
-#
-#
-# # checks if list is empty
-# if not proxies:
-#     print('You did not load proxies. Check your proxies.txt file!')
-#     exit()
-# else:
-#     print('\nCurrently loaded: {}\n\n'.format(proxies))
-# good_proxies, bad_proxies = [], []
-#
-# print('Testing on sites {}\n\n'.format(sites))
-#
-#
-# def proxyChecker(proxy):
-#     try:
-#         proxy_parts = proxy.split(':')
-#         ip, port, user, passw = proxy_parts[0], proxy_parts[
-#             1], proxy_parts[2], proxy_parts[3]
-#         proxies = {
-#             'http': 'http://{}:{}@{}:{}'.format(user, passw, ip, port),
-#             'https': 'https://{}:{}@{}:{}'.format(user, passw, ip, port)
-#         }
-#     except IndexError:
-#         proxies = {'http': 'http://' + proxy, 'https': 'https://' + proxy}
-#
-#     for url in sites:
-#         start_time = mil_seconds()
-#         try:
-#             response = session.get(url, proxies=proxies)
-#             if response.status_code != 200:
-#                 print('{} is not a good proxy.'.format(proxy))
-#                 bad_proxies.append(proxy)
-#             else:
-#                 print(
-#                     '{} on site {} ---- {} ms'.format(proxy, url, mil_seconds() - start_time))
-#                 good_proxies.append(proxy)
-#         except:  # broad exceptions are bad
-#             print('Bad Proxy {} on site {}'.format(proxy, url))
-#
-#
-# if __name__ == '__main__':
-#     for p in proxies:
-#         proxyChecker(p)
-#     good_proxies_set, bad_proxies_set = set(good_proxies), set(bad_proxies)
-#
-#     with open('proxy_results.txt', 'a') as proxy_results:
-#         proxy_results.write('\nTested on {}\n'.format(sites))
-#         if good_proxies_set:
-#             proxy_results.write('\nGood proxies: \n')
-#             for proxy in good_proxies_set:
-#                 proxy_results.write('{}\n'.format(proxy))
-#         if bad_proxies_set:
-#             proxy_results.write('Bad proxies: \n')
-#             for proxy in bad_proxies_set:
-#                 proxy_results.write('{}\n'.format(proxy))
-#     if good_proxies_set:
-#         print('\n\nGood proxies: {}'.format(good_proxies_set))
-#     else:
-#         print('\n\nNo good proxies.')
+browser.find_element_by_xpath('//*[@id="f_in"]').send_keys(proxy_list_string)
+browser.find_element_by_xpath('//*[@id="chkb1"]').click()
+
+proxy_speed_list = []
+
+wait_for_100_in_check()
+
+
+
+
+
+
+
+
+
+#print(proxy_check_table)
+proxy_check_table = html.fromstring(browser.page_source).xpath('//*[@id="list"]/tbody')
+
+for row in proxy_check_table:
+    proxy_check_table_rows = row.xpath('./tr')
+    i = 0
+    for table_row in proxy_check_table_rows:
+        table_row_items = table_row.xpath('./td')
+        if i == 0:
+            i += 1
+            continue
+        ##check if failed and if not for speed in ms
+        speed = table_row_items[3][0][0].text
+        try:
+            speed = speed.split(" ")[0]
+            if int(speed) > 1000:
+                continue
+        except:
+            continue
+
+        ip_address = table_row_items[0].text
+        port = table_row_items[1].text
+        proxy = ip_address + ":" + port
+        proxy_speed_list.append((proxy, int(speed)))
+
+
+working_proxy_string = ""
+
+sorted_by_speed = sorted(proxy_speed_list, key=lambda x: x[1])
+
+for entry in sorted_by_speed:
+    print(entry)
+    working_proxy_string += entry[0] + "\n"
+
+
+
+
+with open('working_proxy_list.txt', "w") as working_proxy_file:
+    working_proxy_file.write(working_proxy_string)
+    working_proxy_file.close()
+
+browser.close()
+
