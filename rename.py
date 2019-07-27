@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import sys
 
@@ -5,6 +7,7 @@ input_arguments = sys.argv
 del input_arguments[0]
 
 target_directories = []
+target_directories.append(os.getcwd())
 replace_map = {}
 
 i = 0
@@ -36,7 +39,7 @@ def renamer(target_directory):
 
     def replace_with(file):
         for replace_key in replace_map:
-            if replace_key in file and not replace_map[replace_key] in file:
+            if replace_key in file:
                 new_filename = file.replace(replace_key, replace_map[replace_key])
                 os.rename(form_path(file), form_path(new_filename))
                 return new_filename

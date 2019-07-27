@@ -10,7 +10,7 @@ import time
 
 output_directory = "/run/media/mtoepperwien/biggie/converted/"
 
-script_working_dir = "/run/media/mtoepperwien/biggie/movies/"
+script_working_dir = "/run/media/mtoepperwien/biggie/media/series/"
 
 # put in series to leave out
 leave_out_list = []
@@ -92,13 +92,13 @@ output_script = open("Handbrake.sh", "w")
 # already_converted_txt.close()
 
 
-# i = 0
-# for line in already_converted_list:
-#     if line[0] == '#':
-#         del already_converted_list[i]
-#     else:
-#         print(line)
-#     i += 1
+i = 0
+for line in already_converted_list:
+    if line[0] == '#':
+        del already_converted_list[i]
+    else:
+        print(line)
+    i += 1
 
 
 # if already_converted_list[-1][-2] != "1":
@@ -139,45 +139,50 @@ def mainfunction(current_working_dir):
     for content in directory_contents:
         input_object_path = current_working_dir + content
         output_file_path = get_output_file_path(input_object_path)
-        if os.path.isfile(input_object_path) and not is_already_converted(input_object_path) and not is_in_leave_out(
-                input_object_path) and not os.path.exists(output_file_path):
+
+        if os.path.isdir(input_object_path):
+            mainfunction(input_object_path + "/")
+            continue
+
+        if os.path.exists(output_file_path):
+            ##check if they have the same length
+            duration_input = get_duration(input_object_path)
+            duration_output = get_duration(output_file_path)
+
+            ##delete output if they havent
+            if duration_input != duration_output:
+                os.remove(output_file_path)
+            else:
+                already_converted_list.append()
+
+
+
+        if os.path.isfile(input_object_path) and not is_in_leave_out(input_object_path) and not os.path.exists(output_file_path):
             if not os.path.exists(current_output_directory):
                 os.makedirs(current_output_directory)
             to_be_converted.append(input_object_path)
-        elif os.path.isdir(input_object_path):
-            mainfunction(input_object_path + "/")
 
 
 def get_duration(file_path):
 
-    def getDurationString(ffprobe_output):
-        for line in ffprobe_output:
-            if "Duration" in str(line):
-                line = str(line).split(" ")
-                index_counter = 0
-                for lineSnippet in line:
-                    if lineSnippet == "Duration:":
-                        return line[index_counter + 1]
-                    index_counter += 1
-
     def convertDurationStringToInt(duration_string):
         try:
-            duration_string = duration_string.replace(',', '')
-            duration_strings = duration_string.split(":")
-
-            duration_in_minutes = ( 60 * int(duration_strings[0]) ) + int(duration_strings[1]) + round( float(duration_strings[2]) / 60 )
+            duration_string = str(duration_string)[3:]
+            duration_string = str(duration_string)[:-4]
+            duration_in_minutes = int((float(duration_string) / 60))
         except:
             duration_in_minutes = 0
-            print("fail: " + file_path)
+            print(duration_string)
+            #print("fail: " + file_path)
 
         return duration_in_minutes
 
 
 
-    ffprobe_result = subprocess.Popen(["ffprobe", file_path],
+    ffprobe_result = subprocess.Popen(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of","default=noprint_wrappers=1:nokey=1", file_path ],
                               stdout = subprocess.PIPE, stderr=subprocess.STDOUT)
 
-    return convertDurationStringToInt(getDurationString(ffprobe_result.stdout.readlines()))
+    return convertDurationStringToInt(ffprobe_result.stdout.readlines())
 
 
 
@@ -193,10 +198,8 @@ total_duration = 0
 for input_file in to_be_converted:
     total_duration += get_duration(input_file)
 
-    output_script.write("echo -n \"" + input_file + "\"" + " >> handbrakelog.txt\n")
     output_script.write(
         "HandBrakeCLI --preset-import-file /home/mtoepperwien/Documents/customOne.json --preset customOne -i \"" + input_file + "\" -o \"" + get_output_file_path(input_file) + "\" --audio-lang-list deu,eng --all-audio -f av_mkv\n")
-    output_script.write("echo \" 1\" >> handbrakelog.txt\n")
     if only_one is True:
         break
 output_script.write("echo Finished!\n")
