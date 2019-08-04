@@ -149,11 +149,11 @@ def mainfunction(current_working_dir):
             duration_input = get_duration(input_object_path)
             duration_output = get_duration(output_file_path)
 
-            ##delete output if they havent
+            ##delete output if they havent got the same length
             if duration_input != duration_output:
                 os.remove(output_file_path)
             else:
-                already_converted_list.append()
+                already_converted_list.append(output_file_path)
 
 
 

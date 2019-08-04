@@ -10,6 +10,7 @@ from send2trash import send2trash
 DOWNLOAD_DIRECTORY = "/home/mtoepperwien/Downloads/"
 DELETION_THRESHOLD = 7
 
+
 # Log time formatting
 timeFormat = '%Y/%m/%d %H:%M:%S'
 
@@ -34,6 +35,9 @@ def remove_old(directory, deletion_threshold):
     current_time = time.time()
 
     for file in os.listdir(directory):
+        #skip own log
+        print(file)
+
         modifiedTime = os.path.getmtime(directory + file)
         # Difference of time now and last modified date
         time_difference = current_time - modifiedTime
