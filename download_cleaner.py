@@ -11,6 +11,13 @@ deletion_threshold = 7
 download_directory = "/home/mtoepperwien/Downloads/"
 
 
+def remove(path):
+    if os.path.isdir(path):
+        os.rmdir(path)
+    elif os.path.isfile(path):
+        os.remove(path)
+
+
 def write_to_log(is_new, object_path):
     prefix = None
     if is_new:
@@ -83,7 +90,7 @@ def main(directory):
         if object == "download_cleaner_log.txt":
             continue
 
-        object_path = download_directory + object
+        object_path = directory + object
         if os.path.isdir(object_path):
             object_path = object_path + "/"
             main(object_path)
@@ -95,7 +102,7 @@ def main(directory):
         if has_been_seen(object_path):
             if timedifference_over_threshold(object_path):
                 print("removing: " + object_path)
-                os.remove(object_path)
+                remove(object_path)
                 write_to_log(False, object_path)
         else:
             write_to_log(True, object_path)
